@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jiya Portfolio</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #85929e ;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      align-items: center;
+      background-color: #85929e ;
+    }
+
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .logo span {
+      color: #ff004f;
+    }
+
+     html {
+      scroll-behavior: smooth;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+
+    .nav-links li a:hover {
+      color: #ff004f;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 100px 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text h3 {
+      font-size: 20px;
+      color: #333;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin: 10px 0;
+      color: black;
+    }
+
+    .hero-text h2 {
+      font-size: 32px;
+      color: #444;
+    }
+
+    .highlight {
+      color: #ff004f;
+    }
+
+    .hero-image img {
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    /* About Section */
+    .about {
+      background-color: #85929e;
+      padding: 80px 50px;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-image img {
+      width: 300px;
+      border-radius: 20px;
+      background-color: #222;
+      padding: 10px;
+    }
+
+    .about-content {
+      max-width: 600px;
+    }
+
+    .about-content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    .about-content p {
+      color: #222;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: black;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .tab.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #ff004f;
+      bottom: -5px;
+      left: 0;
+    }
+
+    .tab-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .tab-content li {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .portfolio {
+  background-color: #85929e;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.portfolio {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+
+    .image-box {
+      width: 300px; /* adjust size as you like */
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .image-box:hover img {
+      transform: scale(1.1);
+    }
+
+
+
+.overlay-content {
+  text-align: center;
+}
+
+.overlay-content h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.overlay-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.icon {
+  font-size: 24px;
+  display: inline-block;
+  background: white;
+  color: red;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+
+/* Contact Section */
+.contact {
+  background-color: #85929e;
+  padding: 80px 50px;
+  color: white;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-left h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.contact-left p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.contact-left .icon {
+  color: #ff004f;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+ .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .social-icons i {
+      transition: transform 0.3s;
+    }
+    .social-icons a:hover i {
+      transform: scale(1.2);
+    }
+
+
+
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #444444;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #5d5c5c;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2f2f2f6e;
+  color: white;
+  font-size: 16px;
+}
+
+.contact-right button {
+  padding: 15px;
+  background-color: #65454e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.contact-right button:hover {
+  background-color: #110d0d37;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Jiya </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span class="highlight">Jiya Sinha</span> </h1>
+      <h1>from Dehi</h1>
+    </div>
+    <div class="hero-image">
+      <img src="C:\Users\user\Documents\Jiya Sinha.jpg" alt="Jiya" />
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="about">
+
+    <div class="about-container">
+      <div class="about-image">
+        <img src="C:\Users\user\Documents\Jiya.jpg" alt="About Me Image" />
+      </div>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          With 1 years' experience in IT Support Executive with proven expertise at TeenTele Communication Pvt Ltd. Adept at resolving complex technical issues and enhancing user experience. Proficient in remote support and OS installation, demonstrating strong problem-solving skills and a commitment to excellence.
+        </p>
+        <div class="tabs">
+          <button class="tab active">Skills</button>
+          <button class="tab">Experience</button>
+          <button class="tab">Education</button>
+        </div>
+        <!-- Tab Content -->
+<div class="tab-content">
+  <!-- Skills Section (default visible) -->
+  <div class="tab-panel" id="skills" style="display: block;">
+    <ul>
+      <li><strong>Frontend Designer</strong><br>Designing Web/App interfaces</li>
+      <li><strong>Backend Designer</strong><br>Create Database Connection</li>
+      <li><strong>Programming Language</strong><br>HTML, CSS, JavaScript, MySQL, PHP, JAVA</li>
+    </ul>
+  </div>
+
+  <!-- Experience Section -->
+  <div class="tab-panel" id="experience" style="display: none;">
+    <ul>
+      <li><strong>2024 - 2025</strong><br>Support Executive at Teen Tele Communication Pvt Ltd</li>
+      <li><strong>2023</strong><br>SEO Intern at OWS Pvt Ltd</li>
+    </ul>
+  </div>
+
+  <!-- Education Section (empty for now) -->
+  <div class="tab-panel" id="education" style="display: none;">
+    <ul>
+      <li><strong>Currently Pursuing</strong><br>BCA from IGNOU</li>
+      <li><strong>Completed</strong><br>Diploma in IT from DSEU Dwarka</li>
+      <li><strong>Completed</strong><br>10th from CBSE Board</li>
+    </ul>
+  </div>
+</div>
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      // Remove active class
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Hide all panels
+      panels.forEach(panel => panel.style.display = 'none');
+      panels[index].style.display = 'block';
+    });
+  });
+</script>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio / My Work Section -->
+ <div id="portfolio" class="portfolio">
+    <div class="image-box">
+      <img src="C:\Users\user\Downloads\libary.jpg" alt="Library" />
+    </div>
+    <div class="image-box">
+      <img src="C:\Users\user\Downloads\portfolio img.png" alt="Library" />
+    </div>
+    <div class="image-box">
+      <img src="library.png" alt="Library" />
+    </div>
+  </div>
+
+ 
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2>Contact Me</h2>
+      <p><span class="icon">📧</span> jiyasinha306@gmail.com</p>
+      <p><span class="icon">📞</span> 8750041069</p>
+      <div class="social-icons">
+        <!--Facebook-->
+        <a href="https://www.facebook.com/profile.php?id=100068086308904" target="_blank" style="color: #1DA1F2;">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+    <!-- Twitter -->
+    <a href="https://x.com/JiyaSinha170?t=wU1LkGOFxr2CzZR0fi6Caw&s=08" target="_blank" style="color: #1DA1F2;">
+      <i class="fab fa-twitter fa-2x"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/jiya_sinha_952?utm_source=qr&igsh=MTZ5cjJleGVlNjcwMA==" target="_blank" style="color: #E4405F;">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/jiya-sinha-86307127b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="color: #0077B5;">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+  </div>
+        
+      <a href="C:\Users\user\Downloads\JIYA (resume).pdf" class="download-btn">Download CV</a>
+    </div>
+    <div class="contact-right">
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+</section>
+
+<footer>
+  <center><span style="color: black;">@Made by JIYA SINHA</span></center>
+</footer>
+</body>
+</html>
